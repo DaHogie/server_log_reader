@@ -51,6 +51,7 @@ func findWorkingIndex(intList []int, searchValue int, wantLess bool) int {
 
 	// Find the working index and check for duplicates if/when it's found. If the workingIndex is -1
 	// at the end then we should have nothing in the list.
+	// Fixing this and the final few lines of the program would solve a lot of the bugs here.
 	for index, value := range intList {
 		if value >= searchValue {
 			workingIndex = index
@@ -186,6 +187,7 @@ func main () {
 
 	// Handle query string parsing, lookups, and inform the user of the results.
 	// If the query string was improperly formatted then send the error to the user.
+	// Fixing the workingIndex method and the slice handling would really fix a lot of the bugs in the program
 	if strings.Contains(*metricsQuery, "usersAccessed") {
 		fmt.Printf("The number of unique users that have accessed the system is: %d\n", len(uniqueUsers))
 	} else if strings.Contains(*metricsQuery, "uploadsGreaterThan[") {

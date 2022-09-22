@@ -11,28 +11,28 @@ The utility is written as a single GoLang file that will be run with Go and take
 command line arguments. The arguments are flag typed so you must specify the flag before
 you provide the value for that flag. The following command shows an example for the flags
 with valid values:
-`go server_log_reader.go -logFilePath server_log.csv -metricsQuery #usersAccessed`
+`go server_log_reader.go -logFilePath server_log.csv -metricsQuery uploadsGreaterThan[50]`
 
 The utility reads the file a single time and creates data structures that are then used to
 return the responses to your queries. You will need to specify your query when you use
 the utility. If values are not provided for your arguments then
 
 Only supports the following queries (> and < query values need to be in kB):
-* `#usersAccessed`
-* `#uploads>[value]`
-* `#uploads<[value]`
-* `#downloads>[value]`
-* `#downloads<[value]`
+* `usersAccessed`
+* `uploadsGreaterThan[value]`
+* `uploadsLessThan[value]`
+* `downloadsGreaterThan[value]`
+* `downloadsLessThan[value]`
 
 The following queries were unsupported due to lack of time:
-* `#userUploads[date{MM/DD/YYYY}]`
-* `#userDownloads[date{MM/DD/YYYY}]`
+* `userUploads[date{MM/DD/YYYY}]`
+* `userDownloads[date{MM/DD/YYYY}]`
 
 
 ## Things that would have been handled with more time
 
-* Much more additional manual testing. Large program and didn't have a ton of interest in testing as the amount of
-		time spent was larger than recommended
+* Much more additional manual testing. Large program and didn't have a ton of ability to test as the amount of
+		time spent was larger than recommended and ran out of mental gas
 * Fix bugs after manual testing
 * Fix line number bug for logging
 * Error handling of a plethora of edge cases. Especially possibilities of index failures with the > and < queries
