@@ -23,8 +23,8 @@ Only supports the following queries (`lessThan` and `greaterThan` query values n
 * `uploadsLessThan[value]`
 * `downloadsGreaterThan[value]`
 * `downloadsLessThan[value]`
-* `userUploads[date{MM/DD/YYYY}]`
-* `userDownloads[date{MM/DD/YYYY}]`
+* `uploadsByUser[userName]OnDate[MM DD YYYY]`
+* `downloadsByUser[userName]OnDate[MM DD YYYY]`
 
 
 ## Things that would have been handled with more time
