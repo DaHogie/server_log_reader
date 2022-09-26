@@ -26,9 +26,13 @@ Only supports the following queries (`lessThan` and `greaterThan` query values n
 * `uploadsByUser[userName]OnDate[MM DD YYYY]`
 * `downloadsByUser[userName]OnDate[MM DD YYYY]`
 
+Tested using shell scripting techniques with the following commands:
+`cat, grep, wc, sort`
+
 
 ## Things that would have been handled with more time
 
+* The counts still are not quite right. Would figure out the specifics with more time.
 * Error handling of a plethora of edge cases.
    * Verifying data in file is matching correct formats
 * Add >= and <= query support
