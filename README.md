@@ -17,29 +17,24 @@ The utility reads the file a single time and creates data structures that are th
 return the responses to your queries. You will need to specify your query when you use
 the utility. If values are not provided for your arguments then
 
-Only supports the following queries (> and < query values need to be in kB):
+Only supports the following queries (`lessThan` and `greaterThan` query values need to be in `kB`):
 * `usersAccessed`
 * `uploadsGreaterThan[value]`
 * `uploadsLessThan[value]`
 * `downloadsGreaterThan[value]`
 * `downloadsLessThan[value]`
+* `uploadsByUser[userName]OnDate[MM DD YYYY]`
+* `downloadsByUser[userName]OnDate[MM DD YYYY]`
 
-The following queries were unsupported due to lack of time:
-* `userUploads[date{MM/DD/YYYY}]`
-* `userDownloads[date{MM/DD/YYYY}]`
-
+Tested using shell scripting techniques with the following commands:
+`cat, grep, wc, sort`
 
 ## Things that would have been handled with more time
 
-* Much more additional manual testing. Large program and didn't have a ton of ability to test as the amount of
-		time spent was larger than recommended and ran out of mental gas
-* Fix bugs after manual testing
-* Fix line number bug for logging
-* Error handling of a plethora of edge cases. Especially possibilities of index failures with the > and < queries
-		 and the correct math checks on splice values using the working index
-* Finishing up the date queries
+* Error handling of a plethora of edge cases.
+   * Verifying data in file is matching correct formats
 * Add >= and <= query support
-* Create additional helper methods for ease of reading/reuse
+* Add case insensitive query string support
 * Having string messages span multiple lines instead of a super long line message
 * Better metricsQuery string checking for early termination before processing
 * Better naming for the project and utility script. I like `file_server_csv_log_reader.go` better
